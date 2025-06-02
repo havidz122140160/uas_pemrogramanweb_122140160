@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: myapp
+Version: 0.1
+Summary: Backend API untuk Music Player Asyik.in
+Author: Havidz Ridho Pratama
+Author-email: havidz.122140160@student.itera.acid
+Keywords: web pyramid pylons music api
+Requires-Dist: pyramid~=2.0
+Requires-Dist: waitress
+Requires-Dist: pyramid_debugtoolbar
+Requires-Dist: passlib[bcrypt]
+Dynamic: author
+Dynamic: author-email
+Dynamic: keywords
+Dynamic: requires-dist
+Dynamic: summary

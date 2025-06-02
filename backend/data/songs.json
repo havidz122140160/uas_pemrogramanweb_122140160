@@ -1,0 +1,368 @@
+{
+    "s1": {
+        "id": "s1",
+        "title": "Mau Dibawa Kemana",
+        "artist": "Armada",
+        "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"
+    },
+    "s2": {
+        "id": "s2",
+        "title": "Senyumlah",
+        "artist": "Andmesh",
+        "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
+    },
+    "s3": {
+        "id": "s3",
+        "title": "Lemon",
+        "artist": "Kenzhi Yonezu",
+        "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+    },
+    "s4": {
+        "id": "s4",
+        "title": "Wind",
+        "artist": "Akeboshi",
+        "url": "URL_MUSIK_DUMMY_4.mp3"
+    },
+    "s5": {
+        "id": "s5",
+        "title": "Sparkle",
+        "artist": "RADWIMPS",
+        "url": "URL_MUSIK_DUMMY_5.mp3"
+    },
+    "s6": {
+        "id": "s6",
+        "title": "Blur",
+        "artist": "Yorushika",
+        "url": "URL_MUSIK_DUMMY_6.mp3"
+    },
+    "s7": {
+        "id": "s7",
+        "title": "Halu",
+        "artist": "Feby Putri",
+        "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3"
+    },
+    "s8": {
+        "id": "s8",
+        "title": "To The Bone",
+        "artist": "Pamungkas",
+        "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3"
+    },
+    "s9": {
+        "id": "s9",
+        "title": "Secukupnya",
+        "artist": "Hindia",
+        "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3"
+    },
+    "s10": {
+        "id": "s10",
+        "title": "Monokrom",
+        "artist": "Tulus",
+        "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3"
+    },
+    "s011": {
+        "id": "s011",
+        "title": "The smell of summer",
+        "artist": "Ton",
+        "url": "https://prod-1.storage.jamendo.com/?trackid=1134466&format=mp31&from=fuDcMBRYlNbQENhvvaFFfg%3D%3D%7CwbplcTU7oqtob9qeC3g%2FMg%3D%3D",
+        "album": "Dreams delayed",
+        "source": "jamendo",
+        "original_id": "1134466"
+    },
+    "s012": {
+        "id": "s012",
+        "title": "The smell of summer",
+        "artist": "Ton",
+        "url": "https://prod-1.storage.jamendo.com/?trackid=1134466&format=mp31&from=fuDcMBRYlNbQENhvvaFFfg%3D%3D%7CwbplcTU7oqtob9qeC3g%2FMg%3D%3D",
+        "album": "Dreams delayed",
+        "source": "jamendo",
+        "original_id": "1134466"
+    },
+    "s013": {
+        "id": "s013",
+        "title": "The smell of summer",
+        "artist": "Ton",
+        "url": "https://prod-1.storage.jamendo.com/?trackid=1134466&format=mp31&from=fuDcMBRYlNbQENhvvaFFfg%3D%3D%7CwbplcTU7oqtob9qeC3g%2FMg%3D%3D",
+        "album": "Dreams delayed",
+        "source": "jamendo",
+        "original_id": "1134466"
+    },
+    "s014": {
+        "id": "s014",
+        "title": "Voglia di te",
+        "artist": "Luca DG",
+        "url": "https://prod-1.storage.jamendo.com/?trackid=1261807&format=mp31&from=jFL0mSw1oHCn3tXkJ1CzCg%3D%3D%7Cae%2BbH4N0p2BZUxMZ%2BPRlBw%3D%3D",
+        "album": "Voglia di te",
+        "source": "jamendo",
+        "original_id": "1261807"
+    },
+    "s015": {
+        "id": "s015",
+        "title": "Voglia di te",
+        "artist": "Luca DG",
+        "url": "https://prod-1.storage.jamendo.com/?trackid=1261807&format=mp31&from=jFL0mSw1oHCn3tXkJ1CzCg%3D%3D%7Cae%2BbH4N0p2BZUxMZ%2BPRlBw%3D%3D",
+        "album": "Voglia di te",
+        "source": "jamendo",
+        "original_id": "1261807"
+    },
+    "s016": {
+        "id": "s016",
+        "title": "Mediterranea",
+        "artist": "Neura Prd",
+        "url": "https://prod-1.storage.jamendo.com/?trackid=1527309&format=mp31&from=i%2Bs3FfAwzzVRezyDKR2lPA%3D%3D%7C0bmOCTnhmXb4tg0MzI7gSw%3D%3D",
+        "album": "Mediterranea",
+        "source": "jamendo",
+        "original_id": "1527309"
+    },
+    "s017": {
+        "id": "s017",
+        "title": "Light calm ambient",
+        "artist": "Olezhka MUSIC",
+        "url": "https://prod-1.storage.jamendo.com/?trackid=1402932&format=mp31&from=xotAHZboX5MYioCyfwuK5w%3D%3D%7CBTk1a1NQnz99QWguG6bm1w%3D%3D",
+        "album": "Light calm ambient",
+        "source": "jamendo",
+        "original_id": "1402932"
+    },
+    "s018": {
+        "id": "s018",
+        "title": "Great and beautiful view",
+        "artist": "Giocol",
+        "url": "https://prod-1.storage.jamendo.com/?trackid=1446611&format=mp31&from=87TvDpFplEikW3uV7P8Xeg%3D%3D%7CzFDmBSVmmrVqNkkb1RnGDQ%3D%3D",
+        "album": "Great and beautiful view",
+        "source": "jamendo",
+        "original_id": "1446611"
+    },
+    "s019": {
+        "id": "s019",
+        "title": "Colombia Extended Version and Remixed",
+        "artist": "Rugi Estalagmita MidiMan",
+        "url": "https://prod-1.storage.jamendo.com/?trackid=1443099&format=mp31&from=R62FOlhSNuiyweVjX4ofUA%3D%3D%7Ch4MBdZ9LTs1pldWIYiMeYQ%3D%3D",
+        "album": "The Best of Chill Out 2017 by Rugi Estalagmita Midiman",
+        "source": "jamendo",
+        "original_id": "1443099"
+    },
+    "s020": {
+        "id": "s020",
+        "title": "\u041d\u0430\u043e\u0441\u0442\u0430\u043d\u043e\u043a - \u0416\u0438\u0442\u044c",
+        "artist": "\u041d\u0430\u043e\u0441\u0442\u0430\u043d\u043e\u043a",
+        "url": "https://prod-1.storage.jamendo.com/?trackid=1471054&format=mp31&from=hu%2BwYByGCxFkVJFL4jTxfQ%3D%3D%7C%2BgAEL0Zf6msbouC1A%2FOV0g%3D%3D",
+        "album": "\u0412\u0435\u0441\u043d\u0430",
+        "source": "jamendo",
+        "original_id": "1471054"
+    },
+    "s021": {
+        "id": "s021",
+        "title": "Je hais le bus",
+        "artist": "Jean Pierre Jean Pierre",
+        "url": "https://prod-1.storage.jamendo.com/?trackid=1363573&format=mp31&from=txuizrG4YlD0AbT5WmXxAQ%3D%3D%7Ca6GpajaVOMGDBNNKHhH9Aw%3D%3D",
+        "album": "Bio Punk",
+        "source": "jamendo",
+        "original_id": "1363573"
+    },
+    "s022": {
+        "id": "s022",
+        "title": "Je hais le bus",
+        "artist": "Jean Pierre Jean Pierre",
+        "url": "https://prod-1.storage.jamendo.com/?trackid=1363573&format=mp31&from=txuizrG4YlD0AbT5WmXxAQ%3D%3D%7Ca6GpajaVOMGDBNNKHhH9Aw%3D%3D",
+        "album": "N/A",
+        "source": "jamendo",
+        "original_id": "jamendo-1363573"
+    },
+    "s023": {
+        "id": "s023",
+        "title": "Je hais le bus",
+        "artist": "Jean Pierre Jean Pierre",
+        "url": "https://prod-1.storage.jamendo.com/?trackid=1363573&format=mp31&from=txuizrG4YlD0AbT5WmXxAQ%3D%3D%7Ca6GpajaVOMGDBNNKHhH9Aw%3D%3D",
+        "album": "N/A",
+        "source": "jamendo",
+        "original_id": "jamendo-1363573"
+    },
+    "s024": {
+        "id": "s024",
+        "title": "Je hais le bus",
+        "artist": "Jean Pierre Jean Pierre",
+        "url": "https://prod-1.storage.jamendo.com/?trackid=1363573&format=mp31&from=txuizrG4YlD0AbT5WmXxAQ%3D%3D%7Ca6GpajaVOMGDBNNKHhH9Aw%3D%3D",
+        "album": "N/A",
+        "source": "jamendo",
+        "original_id": "jamendo-1363573"
+    },
+    "s025": {
+        "id": "s025",
+        "title": "Je hais le bus",
+        "artist": "Jean Pierre Jean Pierre",
+        "url": "https://prod-1.storage.jamendo.com/?trackid=1363573&format=mp31&from=txuizrG4YlD0AbT5WmXxAQ%3D%3D%7Ca6GpajaVOMGDBNNKHhH9Aw%3D%3D",
+        "album": "N/A",
+        "source": "jamendo",
+        "original_id": "jamendo-1363573"
+    },
+    "s026": {
+        "id": "s026",
+        "title": "Morning for two",
+        "artist": "Oleg O. Kachanko",
+        "url": "https://prod-1.storage.jamendo.com/?trackid=1101287&format=mp31&from=xnWvD1YXcAnwmWB0SZFHSw%3D%3D%7CpW6C7xHWZg5AvQe06rkI3g%3D%3D",
+        "album": "N/A",
+        "source": "jamendo",
+        "original_id": "jamendo-1101287"
+    },
+    "s027": {
+        "id": "s027",
+        "title": "Morning for two",
+        "artist": "Oleg O. Kachanko",
+        "url": "https://prod-1.storage.jamendo.com/?trackid=1101287&format=mp31&from=xnWvD1YXcAnwmWB0SZFHSw%3D%3D%7CpW6C7xHWZg5AvQe06rkI3g%3D%3D",
+        "album": "N/A",
+        "source": "jamendo",
+        "original_id": "jamendo-1101287"
+    },
+    "s028": {
+        "id": "s028",
+        "title": "Morning for two",
+        "artist": "Oleg O. Kachanko",
+        "url": "https://prod-1.storage.jamendo.com/?trackid=1101287&format=mp31&from=xnWvD1YXcAnwmWB0SZFHSw%3D%3D%7CpW6C7xHWZg5AvQe06rkI3g%3D%3D",
+        "album": "N/A",
+        "source": "jamendo",
+        "original_id": "jamendo-1101287"
+    },
+    "s029": {
+        "id": "s029",
+        "title": "Morning Has Arrived",
+        "artist": "Soularis",
+        "url": "https://prod-1.storage.jamendo.com/?trackid=1450724&format=mp31&from=YMhc4GbN5oXQYDcnJ%2BznSA%3D%3D%7CIUo8vLToxwEy2Hmizh6ZUw%3D%3D",
+        "album": "Flat Lands",
+        "source": "jamendo",
+        "original_id": "1450724"
+    },
+    "s030": {
+        "id": "s030",
+        "title": "Morning Has Arrived",
+        "artist": "Soularis",
+        "url": "https://prod-1.storage.jamendo.com/?trackid=1450724&format=mp31&from=YMhc4GbN5oXQYDcnJ%2BznSA%3D%3D%7CIUo8vLToxwEy2Hmizh6ZUw%3D%3D",
+        "album": "Flat Lands",
+        "source": "jamendo",
+        "original_id": "1450724"
+    },
+    "s031": {
+        "id": "s031",
+        "title": "Morning Has Arrived",
+        "artist": "Soularis",
+        "url": "https://prod-1.storage.jamendo.com/?trackid=1450724&format=mp31&from=YMhc4GbN5oXQYDcnJ%2BznSA%3D%3D%7CIUo8vLToxwEy2Hmizh6ZUw%3D%3D",
+        "album": "Flat Lands",
+        "source": "jamendo",
+        "original_id": "1450724"
+    },
+    "s032": {
+        "id": "s032",
+        "title": "Summer Sundown",
+        "artist": "Infraction",
+        "url": "https://prod-1.storage.jamendo.com/?trackid=2064515&format=mp31&from=9KuurhzCtOY1D00gQ7Klnw%3D%3D%7CKkm9izekvjTNd%2Fg3VI6Y1Q%3D%3D",
+        "album": "N/A",
+        "source": "jamendo",
+        "original_id": "2064515"
+    },
+    "s033": {
+        "id": "s033",
+        "title": "Summer Sundown",
+        "artist": "Infraction",
+        "url": "https://prod-1.storage.jamendo.com/?trackid=2064515&format=mp31&from=9KuurhzCtOY1D00gQ7Klnw%3D%3D%7CKkm9izekvjTNd%2Fg3VI6Y1Q%3D%3D",
+        "album": "N/A",
+        "source": "jamendo",
+        "original_id": "2064515"
+    },
+    "s034": {
+        "id": "s034",
+        "title": "Light It Up",
+        "artist": "Infraction",
+        "url": "https://prod-1.storage.jamendo.com/?trackid=2006971&format=mp31&from=PujTUgArhS4btLkbPhBoxw%3D%3D%7COTQ9DVilOAS1wdU2%2FX9nyQ%3D%3D",
+        "album": "N/A",
+        "source": "jamendo",
+        "original_id": "2006971"
+    },
+    "s035": {
+        "id": "s035",
+        "title": "Light It Up",
+        "artist": "Infraction",
+        "url": "https://prod-1.storage.jamendo.com/?trackid=2006971&format=mp31&from=PujTUgArhS4btLkbPhBoxw%3D%3D%7COTQ9DVilOAS1wdU2%2FX9nyQ%3D%3D",
+        "album": "N/A",
+        "source": "jamendo",
+        "original_id": "2006971"
+    },
+    "s036": {
+        "id": "s036",
+        "title": "On The High Seas",
+        "artist": "Infraction",
+        "url": "https://prod-1.storage.jamendo.com/?trackid=2143689&format=mp31&from=0k23sKroO5tUIZaCnrvecw%3D%3D%7C4knvYZ2okW2MVoI5IGC9Qg%3D%3D",
+        "album": "On The High Seas",
+        "source": "jamendo",
+        "original_id": "2143689"
+    },
+    "s037": {
+        "id": "s037",
+        "title": "Summer Sundown",
+        "artist": "Infraction",
+        "url": "https://prod-1.storage.jamendo.com/?trackid=2064515&format=mp31&from=9KuurhzCtOY1D00gQ7Klnw%3D%3D%7CKkm9izekvjTNd%2Fg3VI6Y1Q%3D%3D",
+        "album": "N/A",
+        "source": "jamendo",
+        "original_id": "2064515"
+    },
+    "s038": {
+        "id": "s038",
+        "title": "On The High Seas",
+        "artist": "Infraction",
+        "url": "https://prod-1.storage.jamendo.com/?trackid=2143689&format=mp31&from=fnzi%2FO3wBJLyNBXPIjg%2B%2Bw%3D%3D%7CvsljnN2iTbq639Qma3tzmQ%3D%3D",
+        "album": "On The High Seas",
+        "source": "jamendo",
+        "original_id": "2143689"
+    },
+    "s039": {
+        "id": "s039",
+        "title": "On The High Seas",
+        "artist": "Infraction",
+        "url": "https://prod-1.storage.jamendo.com/?trackid=2143689&format=mp31&from=fnzi%2FO3wBJLyNBXPIjg%2B%2Bw%3D%3D%7CvsljnN2iTbq639Qma3tzmQ%3D%3D",
+        "album": "On The High Seas",
+        "source": "jamendo",
+        "original_id": "2143689"
+    },
+    "s040": {
+        "id": "s040",
+        "title": "On The High Seas",
+        "artist": "Infraction",
+        "url": "https://prod-1.storage.jamendo.com/?trackid=2143689&format=mp31&from=fnzi%2FO3wBJLyNBXPIjg%2B%2Bw%3D%3D%7CvsljnN2iTbq639Qma3tzmQ%3D%3D",
+        "album": "On The High Seas",
+        "source": "jamendo",
+        "original_id": "2143689"
+    },
+    "s041": {
+        "id": "s041",
+        "title": "Sitting on the high branch",
+        "artist": "Paolo Orecchia",
+        "url": "https://prod-1.storage.jamendo.com/?trackid=1982777&format=mp31&from=eCREckNi68C06Lzf8bY6OA%3D%3D%7CXEt9vRohSABm2Nw3PYO0Dw%3D%3D",
+        "album": "N/A",
+        "source": "jamendo",
+        "original_id": "1982777"
+    },
+    "s042": {
+        "id": "s042",
+        "title": "On The High Seas",
+        "artist": "Nick Gordy",
+        "url": "https://prod-1.storage.jamendo.com/?trackid=1790435&format=mp31&from=1mUkx1WF2W7EpnDrX%2FgCWA%3D%3D%7Cz6bCmzYlrFVQ5c3E5NILXg%3D%3D",
+        "album": "On The High Seas",
+        "source": "jamendo",
+        "original_id": "1790435"
+    },
+    "s043": {
+        "id": "s043",
+        "title": "On The High Seas",
+        "artist": "Infraction",
+        "url": "https://prod-1.storage.jamendo.com/?trackid=2143689&format=mp31&from=fnzi%2FO3wBJLyNBXPIjg%2B%2Bw%3D%3D%7CvsljnN2iTbq639Qma3tzmQ%3D%3D",
+        "album": "On The High Seas",
+        "source": "jamendo",
+        "original_id": "2143689"
+    },
+    "s044": {
+        "id": "s044",
+        "title": "Sitting on the high branch",
+        "artist": "Paolo Orecchia",
+        "url": "https://prod-1.storage.jamendo.com/?trackid=1982777&format=mp31&from=eCREckNi68C06Lzf8bY6OA%3D%3D%7CXEt9vRohSABm2Nw3PYO0Dw%3D%3D",
+        "album": "N/A",
+        "source": "jamendo",
+        "original_id": "1982777"
+    }
+}

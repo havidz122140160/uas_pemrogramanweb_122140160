@@ -1,0 +1,12 @@
+setup.py
+myapp/__init__.py
+myapp/routes.py
+myapp.egg-info/PKG-INFO
+myapp.egg-info/SOURCES.txt
+myapp.egg-info/dependency_links.txt
+myapp.egg-info/entry_points.txt
+myapp.egg-info/not-zip-safe
+myapp.egg-info/requires.txt
+myapp.egg-info/top_level.txt
+myapp/views/__init__.py
+myapp/views/auth_views.py

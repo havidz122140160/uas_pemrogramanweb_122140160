@@ -1,0 +1,59 @@
+{
+    "pl1": {
+        "id": "pl1",
+        "name": "Playlist Pop Indonesia Hits",
+        "song_ids": [
+            "s2",
+            "s9",
+            "s10",
+            "s025"
+        ]
+    },
+    "pl2": {
+        "id": "pl2",
+        "name": "Santai Sore OST Anime",
+        "song_ids": [
+            "s3",
+            "s4",
+            "s5",
+            "s6"
+        ]
+    },
+    "pl3": {
+        "id": "pl3",
+        "name": "Indie Favorit",
+        "song_ids": [
+            "s7",
+            "s8",
+            "s1"
+        ]
+    },
+    "pl04": {
+        "id": "pl04",
+        "name": "Morning Vibes",
+        "song_ids": [
+            "s2",
+            "s011",
+            "s014",
+            "s016",
+            "s017",
+            "s018",
+            "s019",
+            "s043",
+            "s044"
+        ]
+    },
+    "pl05": {
+        "id": "pl05",
+        "name": "Chill",
+        "song_ids": [
+            "s027",
+            "s031",
+            "s032",
+            "s034",
+            "s039",
+            "s041",
+            "s042"
+        ]
+    }
+}
