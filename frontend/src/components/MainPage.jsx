@@ -71,7 +71,6 @@ function MainPage({ onLogout }) {
     setJamendoResults([]);
     setJamendoError(null);
 
-    // --- GANTI {YOUR_CLIENT_ID} DENGAN CLIENT_ID ASLI ABANG ---
     const YOUR_JAMENDO_CLIENT_ID = 'c1150464'; 
     // ---------------------------------------------------------
 
@@ -124,8 +123,7 @@ function MainPage({ onLogout }) {
     const fetchPlaylistsInitial = async () => {
       console.log("MainPage: useEffect[] - Mulai fetch playlists...");
       setLoadingPlaylists(true); setError(null); 
-      // setPlaylists([]); // Tidak perlu dikosongkan di sini jika hanya load sekali
-      // setCurrentPlaylist(null); // Jangan reset currentPlaylist di sini agar tidak infinite loop jika currentPlaylist jadi dependency
+      
       try {
         const data = await fetchWithAuth('/api/playlists', {}, onLogout);
         console.log("MainPage: useEffect[] - Data playlists mentah dari API:", data);
@@ -165,7 +163,7 @@ function MainPage({ onLogout }) {
   useEffect(() => {
   if (currentPlaylist && currentPlaylist.id) {
     const fetchSongsForCurrentPlaylist = async () => { // Ganti nama fungsi agar lebih deskriptif
-      // ---- TAMBAHKAN LOG INI ----
+      
       console.log(`MainPage: useEffect[currentPlaylist] - TERPICU. Fetching songs for playlist ID: ${currentPlaylist.id} ("${currentPlaylist.name}")`);
       console.log("MainPage: useEffect[currentPlaylist] - Objek currentPlaylist saat ini:", currentPlaylist);
       // ---------------------------
