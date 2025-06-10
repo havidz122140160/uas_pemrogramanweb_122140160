@@ -14,7 +14,7 @@ function LoginPage({ onNavigateToSignup, onLoginSuccess }) {
     console.log('Mengirim data login:', loginData);
 
     try {
-      const response = await fetch('/api/login', { // Melalui Vite Proxy
+      const response = await fetch('/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -28,16 +28,14 @@ function LoginPage({ onNavigateToSignup, onLoginSuccess }) {
         console.log('Login berhasil:', responseData);
         setMessage(`Sukses: ${responseData.message || 'Login berhasil!'}`);
 
-        // --- PERUBAHAN DI SINI ---
         if (responseData.token && responseData.user) {
           console.log('Menyimpan token dan user data ke localStorage...');
-          localStorage.setItem('authToken', responseData.token); // Simpan token
-          localStorage.setItem('currentUser', JSON.stringify(responseData.user)); // Simpan data user (sebagai string JSON)
+          localStorage.setItem('authToken', responseData.token);
+          localStorage.setItem('currentUser', JSON.stringify(responseData.user));
         }
-        // -------------------------
 
         if (onLoginSuccess) {
-          onLoginSuccess(responseData.user); // Kirim juga user data ke App.jsx jika perlu
+          onLoginSuccess(responseData.user);
         }
       } else {
         console.error('Login gagal:', responseData);
