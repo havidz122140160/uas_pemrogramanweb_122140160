@@ -17,9 +17,7 @@ function MainPage({ onLogout }) {
     if (token) {
       headers['Authorization'] = `Bearer ${token}`;
     }
-    // Jika ada body dan Content-Type belum diset, dan body adalah objek, set ke application/json
     if (options.body && typeof options.body === 'string' && !headers['Content-Type']) {
-        // Biasanya jika body adalah stringified JSON, Content-Type sudah diset oleh pemanggil
     }
 
     const response = await fetch(url, { ...options, headers });
@@ -38,9 +36,9 @@ function MainPage({ onLogout }) {
     }
 
     if (response.status === 204) { // No Content
-      return null; // Atau { success: true } atau objek pesan sukses kustom
+      return null;
     }
-    return response.json(); // Untuk 200, 201, dll.
+    return response.json();
   };
 
   const [playlists, setPlaylists] = useState([]);
@@ -72,7 +70,6 @@ function MainPage({ onLogout }) {
     setJamendoError(null);
 
     const YOUR_JAMENDO_CLIENT_ID = 'c1150464'; 
-    // ---------------------------------------------------------
 
     if (YOUR_JAMENDO_CLIENT_ID === 'CLIENT_ID_GUA') {
       console.error("JAMENDO CLIENT ID belum diisi!");
@@ -82,16 +79,14 @@ function MainPage({ onLogout }) {
     }
 
     try {
-      // Menggunakan parameter 'namesearch' untuk mencari di judul lagu, album, dan artis
       const searchUrl = `https://api.jamendo.com/v3.0/tracks/?client_id=${YOUR_JAMENDO_CLIENT_ID}&format=jsonpretty&limit=20&search=${encodeURIComponent(currentSearchTerm)}`;
 
       console.log("MainPage: Calling Jamendo API URL:", searchUrl);
 
-      const response = await axios.get(searchUrl); // Menggunakan axios
+      const response = await axios.get(searchUrl);
 
       console.log("MainPage: Full Jamendo response.data:", response.data); 
 
-      // Hasil dari Jamendo ada di dalam response.data.results (sebuah array track)
       if (response.data && response.data.results && response.data.results.length > 0) {
         setJamendoResults(response.data.results);
         console.log("MainPage: Hasil dari Jamendo ditemukan:", response.data.results);
@@ -118,7 +113,6 @@ function MainPage({ onLogout }) {
 
   console.log('MainPage Render - currentPlaylist:', currentPlaylist?.name, 'nowPlaying:', nowPlaying?.title);
 
-  // 1. Fetch playlists lokal saat komponen mount (HANYA SATU useEffect INI)
   useEffect(() => {
     const fetchPlaylistsInitial = async () => {
       console.log("MainPage: useEffect[] - Mulai fetch playlists...");
@@ -130,7 +124,6 @@ function MainPage({ onLogout }) {
         if (Array.isArray(data)) {
           setPlaylists(data);
           console.log("MainPage: useEffect[] - State 'playlists' diupdate dengan:", data);
-          // Hanya set currentPlaylist jika belum ada DAN ada data playlist
           if (data.length > 0 && !currentPlaylist) { 
             console.log("MainPage: useEffect[] - Ada playlist, set currentPlaylist ke yang pertama:", data[0]);
             setCurrentPlaylist(data[0]);
@@ -155,18 +148,16 @@ function MainPage({ onLogout }) {
       }
     };
     fetchPlaylistsInitial();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [onLogout]); // onLogout adalah prop, idealnya stabil (useCallback di App.jsx)
+  }, [onLogout]);
 
 
-  // 2. Fetch lagu lokal untuk currentPlaylist saat currentPlaylist berubah
+  //Fetch lagu lokal untuk currentPlaylist saat currentPlaylist berubah
   useEffect(() => {
   if (currentPlaylist && currentPlaylist.id) {
-    const fetchSongsForCurrentPlaylist = async () => { // Ganti nama fungsi agar lebih deskriptif
+    const fetchSongsForCurrentPlaylist = async () => {
       
       console.log(`MainPage: useEffect[currentPlaylist] - TERPICU. Fetching songs for playlist ID: ${currentPlaylist.id} ("${currentPlaylist.name}")`);
       console.log("MainPage: useEffect[currentPlaylist] - Objek currentPlaylist saat ini:", currentPlaylist);
-      // ---------------------------
       setLoadingSongs(true); setSongs([]); setError(null);
       try {
         const data = await fetchWithAuth(`/api/playlists/${currentPlaylist.id}/songs`, {}, onLogout);
@@ -184,7 +175,7 @@ function MainPage({ onLogout }) {
     console.log("MainPage: useEffect[currentPlaylist] - currentPlaylist null atau ID tidak ada, songs dikosongkan.");
     setSongs([]);
   }
-}, [currentPlaylist, onLogout]); // Dependency: currentPlaylist dan onLogout
+}, [currentPlaylist, onLogout]);
 
 
   // --- Handler untuk Player Musik (Lokal) ---
@@ -193,7 +184,7 @@ function MainPage({ onLogout }) {
     if (song && song.url && !song.url.startsWith('URL_MUSIK_DUMMY')) {
       setNowPlaying(song);
       setCurrentTime(0); // Reset currentTime untuk lagu baru
-      setSongDuration(0); // Reset songDuration, akan diupdate oleh onLoadedMetadata
+      setSongDuration(0);
       if (audioRef.current) {
         audioRef.current.src = song.url;
         const playPromise = audioRef.current.play();
@@ -203,11 +194,11 @@ function MainPage({ onLogout }) {
             .catch(error => { 
               console.error("Error auto-play di handlePlaySong:", error); 
               setIsPlaying(false); 
-              setSongDuration(0); // Pastikan reset jika play gagal
+              setSongDuration(0);
               setCurrentTime(0);
             });
-        } else { // Jika playPromise undefined, coba set isPlaying (beberapa browser mungkin butuh ini)
-            setIsPlaying(true); // Mungkin tidak akurat jika play gagal tanpa promise
+        } else {
+            setIsPlaying(true);
         }
       }
     } else {
@@ -364,33 +355,31 @@ const handleAddToPlaylist = async (songToAdd) => {
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ song_object: { // Mengirim sebagai song_object untuk lagu baru
-            title: songToAdd.title, // Asumsi songToAdd punya struktur ini jika dari Jamendo
+        body: JSON.stringify({ song_object: {
+            title: songToAdd.title,
             artist: songToAdd.artist,
             url: songToAdd.url,
             album: songToAdd.album_name || songToAdd.album || 'N/A',
-            source: songToAdd.source || 'jamendo', // Jika dari Jamendo, songToAdd bisa punya field source
-            original_id: songToAdd.original_id || songToAdd.id // ID asli dari Jamendo
+            source: songToAdd.source || 'jamendo',
+            original_id: songToAdd.original_id || songToAdd.id
         } }),
       },
       onLogout
     );
 
-    console.log('MainPage: [AddToPlaylist] Respons mentah dari backend:', responseData); // <-- LOG 1
+    console.log('MainPage: [AddToPlaylist] Respons mentah dari backend:', responseData);
 
-    if (responseData && responseData.playlist) { // Pastikan responseData dan responseData.playlist ada
+    if (responseData && responseData.playlist) {
       setActionMessage(responseData.message || `Lagu "${songToAdd.title}" berhasil ditambahkan.`);
       
       console.log('MainPage: [AddToPlaylist] currentPlaylist SEBELUM di-set:', currentPlaylist);
       console.log('MainPage: [AddToPlaylist] responseData.playlist dari backend (yang akan di-set):', responseData.playlist);
       
-      setCurrentPlaylist(responseData.playlist); // Ini seharusnya memicu useEffect untuk fetch songs
-                                                  // karena responseData.playlist adalah objek BARU dari backend.
+      setCurrentPlaylist(responseData.playlist);
       
       console.log('MainPage: [AddToPlaylist] PANGGILAN setCurrentPlaylist(responseData.playlist) sudah dilakukan.');
 
     } else {
-      // Jika backend tidak mengembalikan playlist terupdate atau responseData tidak sesuai harapan
       console.error('MainPage: [AddToPlaylist] Backend tidak mengembalikan objek playlist yang valid di respons:', responseData);
       setActionMessage(`Error: Respons tidak valid dari server setelah menambah lagu.`);
     }
@@ -404,7 +393,7 @@ const handleAddToPlaylist = async (songToAdd) => {
 };
 
   const handleAddNowPlayingToCurrentPlaylist = async () => {
-    if (!nowPlaying || !nowPlaying.id) { // Perlu ada lagu yang sedang aktif (atau setidaknya dipilih)
+    if (!nowPlaying || !nowPlaying.id) {
       setActionMessage('Error: Tidak ada lagu yang sedang diputar untuk ditambahkan.');
       setTimeout(() => setActionMessage(''), 3000);
       return;
@@ -420,7 +409,7 @@ const handleAddToPlaylist = async (songToAdd) => {
     setActionMessage(`Menambahkan "<span class="math-inline">\{nowPlaying\.title\}" ke "</span>{currentPlaylist.name}"...`);
     setError(null);
 
-    // Cek duplikasi: Apakah lagu dengan original_id & source yang sama sudah ada di playlist?
+    // Cek duplikasi: Apakah lagu dengan original_id & source yang sama sudah ada di playlist
     const isDuplicate = songs.some(song => {
       // Cek baik untuk lagu lokal maupun Jamendo
       if (song.source && song.original_id) {
@@ -429,7 +418,7 @@ const handleAddToPlaylist = async (songToAdd) => {
         String(song.original_id) === String(nowPlaying.original_id || (nowPlaying.id.startsWith('jamendo-') ? nowPlaying.id.substring(8) : nowPlaying.id))
       );
       }
-      // Fallback: jika tidak ada source/original_id, bandingkan title, artist, dan url
+      // Fallback: jika tidak ada source/original_id, membandingkan title, artist, dan url
       return (
       song.title === nowPlaying.title &&
       song.artist === nowPlaying.artist &&
@@ -442,24 +431,15 @@ const handleAddToPlaylist = async (songToAdd) => {
       setTimeout(() => setActionMessage(''), 3000);
       return;
     }
-    // Siapkan data lagu yang akan dikirim ke backend.
-    // Kita perlu 'source' dan 'original_id' jika nowPlaying berasal dari sumber eksternal seperti Jamendo.
-    // Jika nowPlaying adalah lagu lokal, ID-nya sudah ID lokal.
+    
     const songDataToSend = {
       title: nowPlaying.title,
       artist: nowPlaying.artist,
       url: nowPlaying.url,
-      album: nowPlaying.album_name || nowPlaying.album || 'N/A', // Sesuaikan dengan struktur objek nowPlaying
-      // 'source' dan 'original_id' penting jika nowPlaying bisa dari Jamendo
-      // Jika nowPlaying.id sudah dipastikan unik secara global (misal "jamendo-xxxxx" atau "local-yyyyy")
-      // maka backend bisa parsing dari situ.
-      // Untuk sekarang, kita asumsikan nowPlaying.id adalah ID unik global (bisa jadi ID Jamendo atau ID lokal)
-      // dan kita tambahkan source jika ada.
+      album: nowPlaying.album_name || nowPlaying.album || 'N/A',
       source: nowPlaying.source || (nowPlaying.id.startsWith('jamendo-') ? 'jamendo' : 'local'),
       original_id: nowPlaying.original_id || (nowPlaying.id.startsWith('jamendo-') ? nowPlaying.id.substring(8) : nowPlaying.id)
     };
-    // Jika nowPlaying adalah lagu lokal murni, 'original_id' bisa jadi 'id' lokalnya, dan 'source' adalah 'local'.
-    // Backend akan menggunakan kombinasi source & original_id untuk cek duplikasi di ALL_SONGS_DB.
 
     try {
       const responseData = await fetchWithAuth(
@@ -467,11 +447,6 @@ const handleAddToPlaylist = async (songToAdd) => {
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          // Backend kita mengharapkan 'song_object' jika mengirim detail lagu baru
-          // atau 'song_id' jika mengirim ID lagu lokal yang sudah ada.
-          // Karena nowPlaying bisa jadi lagu Jamendo (yang belum ada ID lokalnya)
-          // atau lagu lokal (yang sudah punya ID lokal), kita selalu kirim song_object
-          // agar backend yang menentukan apakah perlu buat entri baru di ALL_SONGS_DB.
           body: JSON.stringify({ song_object: songDataToSend }),
         },
         onLogout
@@ -481,9 +456,8 @@ const handleAddToPlaylist = async (songToAdd) => {
       setActionMessage(responseData.message || `Lagu "<span class="math-inline">\{nowPlaying\.title\}" diproses untuk playlist "</span>{currentPlaylist.name}".`);
 
       if (responseData && responseData.playlist) {
-        setCurrentPlaylist(responseData.playlist); // Ini akan memicu useEffect untuk refresh daftar lagu
+        setCurrentPlaylist(responseData.playlist);
       } else {
-        // Fallback jika backend tidak mengembalikan playlist terupdate
         console.warn("Backend tidak mengembalikan objek playlist setelah menambah lagu. Merefresh lagu secara manual.");
         setCurrentPlaylist(prev => prev ? { ...prev } : null);
       }
@@ -512,13 +486,9 @@ const handleAddToPlaylist = async (songToAdd) => {
       );
       
       setActionMessage(responseData?.message || `Lagu "${songToRemove?.title || ''}" berhasil dihapus.`);
-      // Jika backend mengembalikan playlist yang terupdate di responseData.playlist
       if (responseData && responseData.playlist) {
         setCurrentPlaylist(responseData.playlist); // Ini akan memicu useEffect untuk fetch songs
       } else {
-        // Jika backend tidak mengembalikan playlist (misal hanya 204 atau pesan),
-        // kita perlu memicu fetch songs untuk currentPlaylist secara manual.
-        // Membuat objek baru untuk currentPlaylist akan memicu useEffect.
         console.warn("MainPage: Backend tidak mengembalikan objek playlist setelah remove song. Memicu refresh lagu manual.");
         setCurrentPlaylist(prev => prev ? { ...prev } : null); 
       }
@@ -552,9 +522,6 @@ const handleAddToPlaylist = async (songToAdd) => {
   setActionMessage(`Menambahkan "${jamendoTrack.name}"...`);
   setError(null);
 
-  // Siapkan data lagu yang akan dikirim ke backend.
-  // Backend kita perlu tahu kalau ini lagu baru yang detailnya perlu disimpan.
-
   // Cek duplikasi: Apakah lagu Jamendo ini sudah ada di playlist lokal (berdasarkan source & original_id)
   const isDuplicate = songs.some(song =>
     song.source === 'jamendo' &&
@@ -569,22 +536,19 @@ const handleAddToPlaylist = async (songToAdd) => {
   const newSongDataForBackend = {
     title: jamendoTrack.name,
     artist: jamendoTrack.artist_name,
-    url: jamendoTrack.audio, // URL streaming penuh dari Jamendo
-    album: jamendoTrack.album_name || 'N/A', // Opsional
-    source: 'jamendo', // Tandai sumbernya
-    original_id: jamendoTrack.id // Simpan ID asli dari Jamendo
+    url: jamendoTrack.audio,
+    album: jamendoTrack.album_name || 'N/A',
+    source: 'jamendo',
+    original_id: jamendoTrack.id
   };
 
   try {
-    // Kita akan POST ke endpoint yang sama untuk menambah lagu ke playlist,
-    // tapi dengan body yang berbeda (objek lagu penuh, bukan hanya song_id)
-    // Backend perlu dimodifikasi untuk menangani ini.
     const responseData = await fetchWithAuth(
       `/api/playlists/${currentPlaylist.id}/songs`, 
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ song_object: newSongDataForBackend }), // Kirim objek lagu
+        body: JSON.stringify({ song_object: newSongDataForBackend }),
       },
       onLogout
     );
@@ -592,13 +556,9 @@ const handleAddToPlaylist = async (songToAdd) => {
     console.log('MainPage: Respons dari backend setelah coba tambah lagu Jamendo:', responseData);
     setActionMessage(responseData.message || `Lagu "${jamendoTrack.name}" mungkin telah diproses.`);
 
-    // Jika backend berhasil dan mengembalikan playlist terupdate,
-    // setCurrentPlaylist akan memicu refresh daftar lagu.
     if (responseData.playlist) {
       setCurrentPlaylist(responseData.playlist);
     } else {
-      // Jika backend hanya memberi pesan tanpa data playlist,
-      // kita bisa coba refresh manual (kurang ideal)
       console.warn("Backend tidak mengembalikan objek playlist setelah menambah lagu Jamendo. Merefresh lagu secara manual.");
       setCurrentPlaylist(prev => prev ? { ...prev } : null);
     }
@@ -611,7 +571,6 @@ const handleAddToPlaylist = async (songToAdd) => {
   }
 };
 
-  // Logika Filter Lagu untuk Search Lokal (Client-Side)
   const filteredSongs = songs.filter(song => {
     if (!searchTerm.trim()) return true;
     const lowerSearchTerm = searchTerm.toLowerCase();
@@ -803,7 +762,7 @@ const handleAddToPlaylist = async (songToAdd) => {
                               id: `jamendo-${track.id}`, // Buat ID unik untuk player lokal
                               title: track.name, 
                               artist: track.artist_name, 
-                              url: track.audio // <--- INI URL MP3 PENUHNYA
+                              url: track.audio
                             })}
                             className="w-full text-xs bg-green-500 hover:bg-green-600 text-white py-1 px-2 rounded transition-colors"
                           >
