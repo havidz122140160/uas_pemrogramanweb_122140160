@@ -1,24 +1,20 @@
 // src/components/SignupPage.jsx
-import React, { useState } from 'react'; // useState untuk form handling nanti
-
-// src/components/SignupPage.jsx
-// ... (import React, { useState } ... sama seperti sebelumnya)
+import React, { useState } from 'react';
 
 function SignupPage({ onNavigateToLogin }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [message, setMessage] = useState(''); // State untuk menampilkan pesan feedback
+  const [message, setMessage] = useState('');
 
-  const handleSubmit = async (event) => { // Jadikan async
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    setMessage(''); // Reset pesan setiap kali submit
+    setMessage('');
 
     const userData = { name, email, password };
     console.log('Mengirim data signup:', userData);
 
     try {
-      // Menggunakan path relatif '/api/signup' karena Vite Proxy sudah di-setting
       const response = await fetch('/api/signup', {
         method: 'POST',
         headers: {
@@ -27,22 +23,16 @@ function SignupPage({ onNavigateToLogin }) {
         body: JSON.stringify(userData),
       });
 
-      const responseData = await response.json(); // Selalu coba parse JSON responsnya
+      const responseData = await response.json();
 
-      if (response.ok) { // response.ok berarti status HTTP 200-299
+      if (response.ok) {
         console.log('Signup berhasil:', responseData);
         setMessage(`Sukses: ${responseData.message || 'Pendaftaran berhasil!'}`);
-        // Opsional: otomatis navigasi ke login setelah beberapa detik atau tampilkan pesan permanen
-        // setTimeout(() => {
-        //   if (onNavigateToLogin) onNavigateToLogin();
-        // }, 3000);
       } else {
-        // Jika backend mengembalikan error (status 4xx atau 5xx)
         console.error('Signup gagal:', responseData);
         setMessage(`Error: ${responseData.error || 'Pendaftaran gagal.'}`);
       }
     } catch (error) {
-      // Jika ada error jaringan atau fetch gagal total
       console.error('Error saat fetch signup:', error);
       setMessage(`Error: Tidak bisa terhubung ke server. ${error.message}`);
     }
@@ -51,9 +41,8 @@ function SignupPage({ onNavigateToLogin }) {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4 pt-20 sm:pt-4">
       <div className="bg-brand-card p-6 sm:p-8 rounded-xl shadow-2xl w-full max-w-md">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center text-brand-blue mb-6">Cobain dah.</h2> {/* Judul diperbaiki */}
+        <h2 className="text-3xl sm:text-4xl font-bold text-center text-brand-blue mb-6">Cobain dah.</h2>
 
-        {/* Tempat untuk menampilkan pesan feedback */}
         {message && (
           <div className={`p-3 mb-4 rounded-md text-sm ${message.startsWith('Error:') ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700'}`}>
             {message}
@@ -61,8 +50,6 @@ function SignupPage({ onNavigateToLogin }) {
         )}
 
         <form onSubmit={handleSubmit} className="space-y-5">
-          {/* ... (input fields Nama, e-mail, Password sama seperti sebelumnya) ... */}
-          {/* Pastikan input fields ada di sini */}
           <div>
             <label htmlFor="signup-name" className="text-sm font-medium text-brand-label ml-1">Nama</label>
             <input
